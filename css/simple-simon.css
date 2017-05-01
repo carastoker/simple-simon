@@ -1,0 +1,39 @@
+body {
+    background-color: black;
+    height: 2880;
+    width: 1800;
+}
+
+/*div#gameContainer {*/
+    /*align: center;*/
+/*}*/
+
+div.shapes {
+    width: 80px;
+    height: 80px;
+    margin: 15px;
+    border-radius: 400px;
+    opacity: .5;
+}
+
+div#green.shapes {
+   background-color: greenyellow;
+}
+
+div#blue.shapes {
+    background-color: deepskyblue;
+}
+
+div#purple.shapes {
+    background-color: purple;
+}
+
+div#orange.shapes {
+    background-color: orange;
+}
+
+button {
+    margin: 25px;
+    background-color: white;
+    color: orange;
+}
