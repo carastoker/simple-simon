@@ -2,7 +2,7 @@
  * Created by cstoker on 5/1/17.
  */
 
-(function() {
+(function () {
 
     "use strict";
 
@@ -11,27 +11,25 @@
     var levelArray = [];
     var player = [];
 
-
     var generateRandom = shapes[Math.floor(Math.random() * shapes.length)];
-
 
     function blink(el) {
         $(el).animate({
             opacity: 1
-        }, 500).animate ({
+        }, 500).animate({
             opacity: .5
-        }, 800);
+        }, 200);
     }
 
     blink(generateRandom);
 
-    $(".shapes").click(function(){
+    $(".shapes").click(function () {
         blink(this);
-        console.log(this);
+        // console.log(this);
     });
 
-
-    $(".btn btn-outline").click(function(){
-    });
+    // $(".fireNext").click(function () {
+    //     console.log();
+    // });
 
 })();

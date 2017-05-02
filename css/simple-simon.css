@@ -4,10 +4,6 @@ body {
     width: 1800;
 }
 
-/*div#gameContainer {*/
-    /*align: center;*/
-/*}*/
-
 div.shapes {
     width: 80px;
     height: 80px;
@@ -17,23 +13,36 @@ div.shapes {
 }
 
 div#green.shapes {
-   background-color: greenyellow;
+    background-color: greenyellow;
+    position: relative;
+    margin-top: 5%;
+    margin-left: 29%;
 }
 
 div#blue.shapes {
     background-color: deepskyblue;
+    margin-left: 37%;
 }
 
 div#purple.shapes {
     background-color: purple;
+    margin-left: 45%;
 }
 
 div#orange.shapes {
     background-color: orange;
+    margin-left: 53%;
 }
 
 button {
-    margin: 25px;
+    margin: 5%;
     background-color: white;
     color: orange;
+    margin-left: 42%;
+}
+
+h2 {
+    margin: 5%;
+    margin-left: 34%;
+
 }
