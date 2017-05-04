@@ -35,6 +35,7 @@
         // console.log("CPU array");
         // console.log(levelArray);
 
+        // call blink animation pattern and
         var count = 0;
         var intervalId = setInterval(function () {
             blink(levelArray[count]);
