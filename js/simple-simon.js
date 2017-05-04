@@ -6,36 +6,41 @@
 
     'use strict';
 
-    // convert shapes div to an array using color #id
-    var shapes = ['#green', '#blue', '#purple', '#orange'];
-    // declare var for startGame and function
+    // convert dinos in div to an array using color #ids
+    var shapes = ['#green', '#yellow', '#pink', '#orange'];
     var levelArray = [];
     // store player input
     var player = [];
+    var counter = 0;
+    var rounds = 0;
 
-    // animate shapes to blink
+    // animate dinos to blink
     function blink(element) {
         $(element).animate({
-            opacity: 1
-        }, 500).animate({
             opacity: .5
+        }, 500).animate({
+            opacity: 1
         }, 200);
 
     }
 
     // create empty array inside local function, push random math shapes to array, pass array up to blink for animation,
     //  clear if var count is >= to array, otherwise keep counting up by one, at set speed.
-    function startGame() {
+    function moveForward() {
 
-        // randomize shapes blink in a pattern
+
+        // randomize blink animation pattern
         levelArray.push(shapes[Math.floor(Math.random() * shapes.length)]);
+
+        // console.log("CPU array");
+        // console.log(levelArray);
 
         var count = 0;
         var intervalId = setInterval(function () {
             blink(levelArray[count]);
-            if (count >= levelArray.length -1) {
+            if (count >= levelArray.length - 1) {
                 clearInterval(intervalId);
-                playerMove();
+                playerLevel();
             } else {
                 count++;
             }
@@ -43,49 +48,46 @@
 
     }
 
-    // function playGame() {
-    //
-    //     // randomize shapes blink in a pattern
-    //     levelArray.push(shapes[Math.floor(Math.random() * shapes.length)]);
-    //     console.log('++++++++++++++++');
-    //     console.log(levelArray);
-    //     // you have color in levelArray
-    //     // you start reading your array with counter
-    //     // [green, red, green]
-    //     var count = 0;
-    //     var intervalId = setInterval(function () {
-    //         blink(levelArray[count]);
-    //         if (count >= levelArray.length) {
-    //             clearInterval(intervalId);
-    //         } else {
-    //             count++;
-    //         }
-    //     }, 600);
-    //
-    // }
-
-    function playerMove() {
+    function playerLevel() {
 
         var i = 0;
 
         $(".shapes").on('click', function () {
-            blink('#'+this.id);
+
+            blink('#' + this.id);
             var test = '#' + this.id;
-            // player.push(test);
-            console.log(player);
-            console.log('length of levelArray =>' + levelArray.length);
-            console.log('length of player.length =>' + player.length);
+
+            //add a new element to the user array
+            player.push(test);
+
+            //
+            // console.log('length of levelArray =>' + levelArray.length);
+            // console.log('length of player.length =>' + player.length);
+
             if (test === levelArray[i]) {
+
                 if (i === levelArray.length - 1) {
-                    startGame();
+
+                    console.log("User array");
+                    console.log(player);
+
+                    //generates a new element to the array
+                    player = [];
+                    moveForward();
+                    //get rid of the event listeners
                     $(".shapes").off('click');
+                    //update the rounds after moving forward
+                    $('#rounds').text(levelArray.length);
+
                 } else {
                     i++;
                 }
+
             } else {
-                console.log('lose');
                 levelArray = [];
+                player = [];
                 $(".shapes").off('click');
+                alert("That's not the dino dance! Game over.");
             }
 
         });
@@ -94,11 +96,16 @@
 
     // EventListener fires random math/blink animation when btn is clicked.
     $('#newGame').click(function () {
-        startGame();
+        //Reset the rounds number to Zero
+        $("#rounds").text(1);
+        levelArray = [];
+
+        moveForward();
     });
+
     // EventListener fires the next level w/ random math/blink animation when btn is clicked.
     // removed clear array so function counts up one by one.
     $('#nextLevel').click(function () {
-        playGame();
+        moveForward();
     });
 })();
