@@ -5,7 +5,15 @@
 (function () {
 
     'use strict';
-
+  // veiwport redirect
+  if(window.innerWidth <= 800) {
+      window.location.replace("https://www.youtube.com/watch?v=Up_NC-qGzuI");
+  }
+  $(window).on('resize',function () {
+      if(window.innerWidth <= 800) {
+          window.location.replace("https://www.youtube.com/watch?v=Up_NC-qGzuI");
+      }
+  })
     // convert dinos in div to an array using color #ids
     var shapes = ['#green', '#yellow', '#pink', '#orange'];
     var levelArray = [];
@@ -54,6 +62,9 @@
         var i = 0;
 
         $(".shapes").on('click', function () {
+            // add sound to dinos
+            var audio = new Audio("sound/magic.wave");
+            audio.play();
 
             blink('#' + this.id);
             var test = '#' + this.id;
@@ -95,8 +106,11 @@
 
     }
 
-    // EventListener fires random math/blink animation when btn is clicked.
+    // EventListener fires random math/blink animation when btn is clicked by player.
     $('#newGame').click(function () {
+        // add sound to start game btn
+        var audio = new Audio("sounds/magic.wave");
+        audio.play();
         //Reset the rounds number to Zero
         $("#rounds").text(1);
         levelArray = [];

@@ -87,7 +87,7 @@ p {
 span#rounds {
     position: absolute;
     left: 68%;
-    bottom: 50%;
+    bottom: 48%;
     /*transform: rotate(-45deg);*/
     color: #DA88B4;
     font-size: 75px;
