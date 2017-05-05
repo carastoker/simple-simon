@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <title>simple simon</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/simple-simon.css">
+
+
+</head>
+<body>
+
+<div class="container" id="gameContainer">
+
+    <h2>Simple Dino Game</h2>
+
+    <p><span id="introText">After the dinos dance, repeat the sequence by clicking on the dinos.</span></p>
+
+    <button id="newGame">Play New Game</button>
+
+
+    <!--<button id="newGame" type="button" class="btn btn-outline">Play New Game</button>-->
+    <!--<button id="newGame">Play New Game</button>-->
+
+
+    <!--row one-->
+    <div class="row">
+
+        <p><span id="rounds">1</span></p>
+
+        <div id="green" class="col-xs-4 col-xs-offset-4 box shapes"></div>
+
+    </div>
+
+
+    <!--row two-->
+    <div class="row">
+
+        <div id="pink" class="col-xs-4 box shapes"></div>
+
+        <div id="yellow" class="col-xs-4 col-xs-offset-4 box shapes"></div>
+
+        <div>
+            <!--row three-->
+            <div class="row">
+
+                <div id="orange" class="col-xs-4 col-xs-offset-4 box shapes">
+
+
+                </div>
+            </div>
+
+        </div>
+
+
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"
+                integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
+                crossorigin="anonymous"></script>
+        <script src="js/simple-simon.js"></script>
+
+</body>
+</html>

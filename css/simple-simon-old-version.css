@@ -1,0 +1,104 @@
+body {
+    /*height: 2880px;*/
+    /*width: 1800px;*/
+    background-color: white;
+}
+
+.box {
+  border: 1px solid green;
+  height: 250px;
+}
+
+div#gameContainer {
+    /*border: 1px solid green;*/
+    background-color: white;
+    padding: 5%;
+}
+
+/*#subContainer {*/
+    /*height:500%;*/
+    /*width: 500%;*/
+/*}*/
+
+div.shapes {
+    /*border: 1px solid green;*/
+    /*display: inline-block;*/
+    height: 20vw;
+    opacity: 1;
+    transform: rotate(-45deg);
+}
+
+.wrapper {
+    transform: rotate(45deg);
+}
+
+div#green.shapes {
+    background-image: url("../img/green-dino.svg");
+    background-repeat: no-repeat;
+    position: relative;
+    bottom: 15px;
+    right: 10px;
+}
+
+div#yellow.shapes {
+    background-image: url("../img/yellow-dino.svg");
+    background-repeat: no-repeat;
+    position: relative;
+    top: 30px;
+    left: 50px;
+    right: 40px;
+
+}
+
+div#pink.shapes {
+    background-image: url("../img/pink-dino.svg");
+    background-repeat: no-repeat;
+    position: relative;
+    bottom: 45px;
+}
+
+div#orange.shapes {
+    background-image: url("../img/orange-dino.svg");
+    background-repeat: no-repeat;
+    position: relative;
+    left: 25px;
+    bottom: 25px;
+}
+
+button {
+    /*border: 1px solid green;*/
+    margin-top: -145%;
+    /*padding: 2%;*/
+    /*!*margin-bottom: 5%;*!*/
+    margin-left: 75%;
+    background-color: white;
+    color: orange;
+
+}
+
+span#rounds {
+    /*border: 1px solid green;*/
+    position: absolute;
+    left: 70%;
+    bottom: 55%;
+    /*transform: rotate(-45deg);*/
+    color: #DA88B4;
+    font-size: 75px;
+}
+
+h2 {
+    color: orange;
+    margin: -1%;
+    margin-left: 35%;
+    margin-bottom: 15%;
+}
+
+p {
+    /*!*border: 1px solid green;*!*/
+    color: #DA88B4;
+    /*font-size: 35px;*/
+    /*!*float: left;*!*/
+    /*!*height: 20%;*!*/
+    /*margin-left: 48%;*/
+    /*margin-bottom: 20%;*/
+}

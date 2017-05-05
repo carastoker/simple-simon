@@ -5,21 +5,10 @@
 (function () {
 
     'use strict';
-  // veiwport redirect
-  if(window.innerWidth <= 800) {
-      window.location.replace("https://www.youtube.com/watch?v=Up_NC-qGzuI");
-  }
-  $(window).on('resize',function () {
-      if(window.innerWidth <= 800) {
-          window.location.replace("https://www.youtube.com/watch?v=Up_NC-qGzuI");
-      }
-  })
+
     // convert dinos in div to an array using color #ids
-    var shapes = ['#green', '#yellow', '#pink', '#orange'];
+    var dinos = ['#green', '#yellow', '#pink', '#orange'];
     var levelArray = [];
-    // store player input
-    var player = [];
-    var counter = 0;
     var rounds = 0;
 
     // animate dinos to blink
@@ -38,21 +27,23 @@
 
 
         // randomize blink animation pattern
-        levelArray.push(shapes[Math.floor(Math.random() * shapes.length)]);
+        levelArray.push(dinos[Math.floor(Math.random() * dinos.length)]);
 
-        // console.log("CPU array");
-        // console.log(levelArray);
-
-        // call blink animation pattern and
+        /
+        // setInterval runs through length of array starting at 0 then clears
         var count = 0;
+
         var intervalId = setInterval(function () {
+            // animation + random math starting at beginning of array
             blink(levelArray[count]);
+            // goes through length of array before clearing
             if (count >= levelArray.length - 1) {
                 clearInterval(intervalId);
                 playerLevel();
-            } else {
-                count++;
             }
+
+            count++;
+
         }, 800);
 
     }
@@ -62,17 +53,15 @@
         var i = 0;
 
         $(".shapes").on('click', function () {
-            // add sound to dinos
+            // add magic sound to dinos
             var audio = new Audio("sound/magic.wave");
-            audio.play();
-
-            blink('#' + this.id);
+            // grabs the id clicked on in this event
             var test = '#' + this.id;
 
-            //add a new element to the user array
-            player.push(test);
+            audio.play();
 
-            //
+            blink(test);
+
             // console.log('length of levelArray =>' + levelArray.length);
             // console.log('length of player.length =>' + player.length);
 
@@ -80,15 +69,13 @@
 
                 if (i === levelArray.length - 1) {
 
-                    console.log("User array");
-                    console.log(player);
-
                     //generates a new element to the array
-                    player = [];
+
                     moveForward();
+
                     //get rid of the event listeners
                     $(".shapes").off('click');
-                    //update the rounds after moving forward
+                    //update the rounds after moving forward.
                     $('#rounds').text(levelArray.length);
 
                 } else {
@@ -97,19 +84,20 @@
 
             } else {
                 levelArray = [];
-                player = [];
+
                 $(".shapes").off('click');
                 alert("That's not the dino dance! Game over.");
+                // $("#gameOver")
             }
 
         });
 
     }
 
-    // EventListener fires random math/blink animation when btn is clicked by player.
+    // EventListener fires random math/animation when btn is clicked by player.
     $('#newGame').click(function () {
-        // add sound to start game btn
-        var audio = new Audio("sounds/magic.wave");
+        // add sound to start game btn.
+        var audio = new Audio("sound/magic.wave");
         audio.play();
         //Reset the rounds number to Zero
         $("#rounds").text(1);

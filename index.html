@@ -2,10 +2,11 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <title>simple simon</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-    <link rel="stylesheet" href="css/simple-simon.css">
+    <link rel="stylesheet" href="css/simple-simon-old-version.css">
 </head>
 
 <body>
@@ -15,19 +16,33 @@
     <h2>Simple Dino Game</h2>
     <!--<p><span id="introText">After the dinos dance, repeat the sequence by clicking on the dinos.</span></p>-->
 
-    <div class="col-xs-6 col-xs-offset-3 wrapper">
-        <div id="green" class="shapes col-xs-6"></div>
-        <div id="yellow" class="shapes col-xs-6"></div>
-        <div id="pink" class="shapes col-xs-6"></div>
-        <div id="orange" class="shapes col-xs-6"></div>
+    <div class="row">
+
+        <div class="col-xs-6 col-xs-offset-3 wrapper">
+
+            <div class="row">
+
+                <div id="subContainer">
+
+                    <div id="green" class="shapes col-xs-6"></div>
+                    <div id="yellow" class="shapes col-xs-6"></div>
+                    <div id="pink" class="shapes col-xs-6"></div>
+                    <div id="orange" class="shapes col-xs-6"></div>
+
+                </div>
+
+            </div>
+        </div>
 
     </div>
 
+    <!--<div id="gameOver">That's not the dino dance! Game over.</div>-->
+
     <div id="wrapperTwo">
 
-    <p><span id="rounds">1</span></p>
+        <p><span id="rounds">1</span></p>
 
-    <button id="newGame" type="button" class="btn btn-outline">Play New Game</button>
+        <button id="newGame" type="button" class="btn btn-outline">Play New Game</button>
 
     </div>
 
