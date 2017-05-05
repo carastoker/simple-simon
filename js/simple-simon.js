@@ -29,7 +29,6 @@
         // randomize blink animation pattern
         levelArray.push(dinos[Math.floor(Math.random() * dinos.length)]);
 
-        /
         // setInterval runs through length of array starting at 0 then clears
         var count = 0;
 
